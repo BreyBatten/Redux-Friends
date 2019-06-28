@@ -3,12 +3,16 @@ import { connect } from 'react-redux';
 import { login } from '../actions'
 
 class LoginForm extends React.Component {
-    state = {
-        credentials: {
-            username: "",
-            password: ""
-        }
-    };
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+            credentials: {
+                username: "",
+                password: ""
+            }
+        };
+    }
 
     handleChanges = e => {
         e.preventDefault();

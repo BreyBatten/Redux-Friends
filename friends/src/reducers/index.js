@@ -36,7 +36,8 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload
+                error: '',
+                friends: action.payload
             }
         case FETCH_DATA_FAILURE:
             return {
