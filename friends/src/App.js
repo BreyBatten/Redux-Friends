@@ -1,12 +1,20 @@
 import React from 'react';
+import LoginForm from './components/LoginForm';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h2>Redux-Friends project</h2>
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <Link to='/login'>Login</Link>
+          <Link to='/protectedFriends'>Friends</Link>
+        </nav>
+        <Route path='/login' component={LoginForm} />
+      </div>
+    </Router>
   );
 }
 
