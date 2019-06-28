@@ -25,7 +25,8 @@ class Friends extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        friends: state.friends
+        friends: state.friends,
+        isFetching: state.isFetching
     }
 }
 

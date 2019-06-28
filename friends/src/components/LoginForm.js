@@ -20,9 +20,11 @@ class LoginForm extends React.Component {
         })
     }
 
-    login = e => {
+    handleLogin = e => {
         e.preventDefault();
-        this.props.login(this.state.credentials);
+        this.props
+            .login(this.state.credentials)
+            .then(() => this.props.history.push('/protected'))
     }
 
     render() {
@@ -43,7 +45,7 @@ class LoginForm extends React.Component {
                     value={this.state.credentials.password}
                     onChange={this.handleChanges}
                 />
-                <button onClick={this.login}>Login</button>
+                <button onClick={this.handleLogin}>Login</button>
             </div>
         )
     };
